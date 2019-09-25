@@ -11,7 +11,7 @@ class DisplayH(MycroftSkill):
     @intent_file_handler('h.display.intent')
     def handle_h_display(self, message):
         self.speak_dialog('h.display')
-                self.enclosure.mouth_text('The meaning of life, the universe and everything is 42')
+        self.enclosure.mouth_text('The meaning of life, the universe and everything is 42')
 
 
 def create_skill():
