@@ -1,4 +1,4 @@
-from mycroft import MycroftSkill, intent_file_handler
+from mycroft import MycroftSkill, intent_handler, intent_file_handler
 
 
 class DisplayH(MycroftSkill):
@@ -10,8 +10,11 @@ class DisplayH(MycroftSkill):
 
     @intent_file_handler('h.display.intent')
     def handle_h_display(self, message):
-        self.speak_dialog('h.display')
-        self.enclosure.mouth_text('h.display')
+        self.speak_dialog('HKeyword')
+
+    @intent_handler('h.display.intent')
+    	self.enclosure.mouth_text('h')
+
 
 
 def create_skill():
