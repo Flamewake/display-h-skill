@@ -1,21 +1,18 @@
 from mycroft import MycroftSkill, intent_handler, intent_file_handler
+from adapt.intent import IntentBuilder
 
 
 class DisplayH(MycroftSkill):
-    SEC_PER_LETTER = 0.9         # based on the Mark 1 scrolling speed
-    LETTERS_PER_SCREEN = 7.0     # based on the Mark 1 screen size
-
     def __init__(self):
-        MycroftSkill.__init__(self)
+        super(DisplayH, self).__init__(name="DisplayH")
 
-    @intent_file_handler('HKeyword.voc')
+    @intent_handler(IntentBuilder("HIntent").require("HKeyword.voc"))
     def handle_h_display(self, message):
         self.speak_dialog('h.display')
+        self.enclosure.mouth_text('H')
 
-    @intent_handler('HKeyword.voc')
-    	self.enclosure.mouth_text('h')
-
-
+    def stop(self):
+    	pass
 
 def create_skill():
     return DisplayH()
