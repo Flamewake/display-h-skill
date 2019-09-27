@@ -8,11 +8,11 @@ class DisplayH(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('h.display.intent')
+    @intent_file_handler('HKeyword.voc')
     def handle_h_display(self, message):
-        self.speak_dialog('HKeyword')
+        self.speak_dialog('h.display')
 
-    @intent_handler('h.display.intent')
+    @intent_handler('HKeyword.voc')
     	self.enclosure.mouth_text('h')
 
 
